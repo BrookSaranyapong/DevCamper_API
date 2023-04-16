@@ -21,7 +21,7 @@ if(process.env.NODE_ENV === 'development'){
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
 
-const PORT = process.env.PORT || 5500;
+const PORT = process.env.PORT || 5500; 
 
 // const server = app.listen(PORT, () =>{
 //     console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
