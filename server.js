@@ -21,13 +21,17 @@ if(process.env.NODE_ENV === 'development'){
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5500;
 
-const server = app.listen(PORT, () =>{
+// const server = app.listen(PORT, () =>{
+//     console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
+// });
+
+app.listen(PORT, () =>{
     console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
 });
 
-process.on('unhandledRejection', (err, promise) => {
-    console.log(`Error: ${err.message}`);
-    server.close(() => process.exit(1));
-})
+// process.on('unhandledRejection', (err, promise) => {
+//     console.log(`Error: ${err.message}`);
+//     server.close(() => process.exit(1));
+// })

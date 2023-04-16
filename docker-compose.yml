@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: devcamper
+    container_name: devcamper
+    restart: always
+    environment:
+      - PORT=3000
+    depends_on:
+      - mongo
+    ports:
+      - 80:3000
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=1234
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:
