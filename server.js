@@ -21,6 +21,11 @@ if(process.env.NODE_ENV === 'development'){
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
 
+
+app.get('/', (req, res) => {
+    res.send('API is running');
+})
+
 const PORT = process.env.PORT || 5500; 
 
 // const server = app.listen(PORT, () =>{

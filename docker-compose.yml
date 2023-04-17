@@ -4,16 +4,21 @@ services:
   api:
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     image: devcamper
     container_name: devcamper
     restart: always
     environment:
+      - NODE_ENV=development
       - PORT=3000
-    depends_on:
-      - mongo  
     ports:
-      - 80:3000
+      - 3000:3000 
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    networks:
+      - my_devcamper
+
   mongo:
     image: mongo:latest
     container_name: mongo
@@ -24,6 +29,12 @@ services:
       - 27017:27017
     volumes:
       - mongo-db:/data/db
+    networks:
+      - my_devcamper
 
 volumes:
   mongo-db:
+
+networks:
+  my_devcamper:
+    driver: bridge
