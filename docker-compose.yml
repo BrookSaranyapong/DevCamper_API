@@ -17,7 +17,8 @@ services:
       - ./:/app
       - /app/node_modules
     networks:
-      - my_devcamper
+      my_devcamper:
+        ipv4_address: 172.18.1.10
 
   mongo:
     image: mongo:latest
@@ -30,11 +31,14 @@ services:
     volumes:
       - mongo-db:/data/db
     networks:
-      - my_devcamper
-
-volumes:
-  mongo-db:
+      my_devcamper:
+        ipv4_address: 172.18.1.11
 
 networks:
   my_devcamper:
-    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.1.0/24
+
+volumes:
+  mongo-db:
