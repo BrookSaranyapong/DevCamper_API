@@ -1,11 +1,20 @@
-FROM node:latest
+# ใช้ node:alpine เวอร์ชันล่าสุด
+FROM node:alpine
 
+# ตั้งค่า working directory ให้เป็น /app
 WORKDIR /app
 
-COPY package*.json ./
+# คัดลอกไฟล์ package.json ไปยัง container
+COPY package.json ./
 
+# ติดตั้ง dependencies โดยใช้ npm install เพื่อสร้าง package-lock.json
 RUN npm install
 
+# คัดลอกไฟล์อื่นๆ ไปยัง container
 COPY . .
 
-CMD ["npm" , "run", "dev"]  
+# ระบุ port ที่ใช้ในการเชื่อมต่อ
+EXPOSE 3000
+
+# เรียกใช้คำสั่งในการรันเมื่อเริ่มต้น container
+CMD ["npm", "run", "dev"]

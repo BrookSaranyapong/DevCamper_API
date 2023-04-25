@@ -13,6 +13,10 @@ dotenv.config({ path: './config/config.env' });
 connectDB();
 const app = express();
 
+// Body parser
+
+app.use(express.json());
+
 // Dev logging middlewares
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
