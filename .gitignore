@@ -1,9 +1,5 @@
 node_modules/
 config/config.env
-Dockerfile 
-.dev
-docker-compose.yml
 package-lock.json
-yarn.lock
-build
-dist
+Dockerfile
+gitignore
