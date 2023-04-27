@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const colors = require('colors');
+const errorHandler = require('./middlewares/error');
 const connectDB = require('./config/db');
 // Router files
 const bootcamps = require('./routes/bootcamps');
@@ -24,7 +25,7 @@ if(process.env.NODE_ENV === 'development'){
 
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
-
+app.use(errorHandler);
 
 app.get('/', (req, res) => {
     res.send('API is running');
