@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-const geocoder = require('../utils/geocoder');
+const { geocoder } = require('../utils/geocoder');
 
 const BootcampSchema = new mongoose.Schema({
     name: {
@@ -121,7 +121,6 @@ BootcampSchema.pre('save', async function(next) {
         zipcode: loc[0].zipcode,
         country: loc[0].countryCode,
     }
-
     //Do not save address in DB
     this.address = undefined;
     next();

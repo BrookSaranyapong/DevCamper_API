@@ -10,6 +10,7 @@ const logger = require('./middlewares/logger');
 
 // Load env vars
 dotenv.config({ path: './config/config.env' });
+
 // Connect to DB
 connectDB();
 const app = express();
@@ -33,15 +34,15 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5500; 
 
-// const server = app.listen(PORT, () =>{
-//     console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
-// });
-
-app.listen(PORT, () =>{
+const server = app.listen(PORT, () =>{
     console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
 });
 
-// process.on('unhandledRejection', (err, promise) => {
-//     console.log(`Error: ${err.message}`);
-//     server.close(() => process.exit(1));
-// })
+// app.listen(PORT, () =>{
+//     console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
+// });
+
+process.on('unhandledRejection', (err, promise) => {
+    console.log(`Error: ${err.message}`);
+    server.close(() => process.exit(1));
+})
