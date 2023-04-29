@@ -15,13 +15,13 @@
 
 #### $npm install or npm i 
 
-## import all json mockdata to database MongoDB
+## Import all json mockdata to database MongoDB
 #### $node seeder -i 
 
-## delete all json mockdata to database MongoDB    
+## Delete all json mockdata to database MongoDB    
 #### $node seeder -d     
 
 ## Step 2 command 
 
-## start server
+## Start server
 #### $npm run dev
