@@ -15,8 +15,11 @@
 
 #### $npm install or npm i 
 
-#### $node seeder -i     import all json mockdata to database MongoDB
-#### $node seeder -d     delete all json mockdata to database MongoDB
+## import all json mockdata to database MongoDB
+#### $node seeder -i 
+
+## delete all json mockdata to database MongoDB    
+#### $node seeder -d     
 
 ## Step 2 command 
 #### $npm run dev     to strat server
