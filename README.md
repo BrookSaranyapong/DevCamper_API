@@ -22,4 +22,6 @@
 #### $node seeder -d     
 
 ## Step 2 command 
-#### $npm run dev     to strat server
+
+## start server
+#### $npm run dev
