@@ -9,7 +9,7 @@ const bootcamps = require('./routes/bootcamps');
 const logger = require('./middlewares/logger');
 
 // Load env vars
-dotenv.config({ path: './config/config.env.dev' });
+dotenv.config({ path: './config/config.env' });
 
 // Connect to DB
 connectDB();
