@@ -1,4 +1,4 @@
-# "Project DevCamper_API + Docker-container"
+## "Project DevCamper_API + Docker-container"
 
 ## Warning Setting connection database at ./config/config.env
 
@@ -11,7 +11,8 @@ go to Folder DevCamper_API and using command docker-compose up -d
 ## If you not using docker 
 
 ## Step 1 
-please go to command with $npm install or npm i 
+
+### $npm install or npm i 
 
 ### $node seeder -i     import all json mockdata to database MongoDB
 ### $node seeder -d     delete all json mockdata to database MongoDB
