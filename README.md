@@ -18,7 +18,5 @@
 #### $node seeder -i     import all json mockdata to database MongoDB
 #### $node seeder -d     delete all json mockdata to database MongoDB
 
-You can import data with command with $node seeder -i 
-
 ## Step 2 command 
 #### $npm run dev     to strat server
